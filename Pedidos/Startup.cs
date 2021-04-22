@@ -11,6 +11,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Persistencia;
+using FluentValidation.AspNetCore;
+using MediatR;
+using Aplicacion;
 
 namespace Pedidos
 {
@@ -30,8 +33,10 @@ namespace Pedidos
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-                        
-            services.AddControllers();
+
+/*            services.AddMediatR(typeof(Conexion.Manejador).Assembly);*/
+
+            services.AddControllers().AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining <InsertarCabecera>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

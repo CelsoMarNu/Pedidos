@@ -8,7 +8,7 @@ namespace Dominio
         public int CodPedido { get; set; }
         public int Codcliente { get; set; }
         public string Nombre { get; set; }
-        public DateTime FechaPedido { get; set; }
+        public DateTime? FechaPedido { get; set; }
         public DateTime FechaEntrega { get; set; }
         public string Vendedor { get; set; }
         public string Moneda { get; set; }
