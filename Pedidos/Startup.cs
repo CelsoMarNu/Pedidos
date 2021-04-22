@@ -30,7 +30,7 @@ namespace Pedidos
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-
+                        
             services.AddControllers();
         }
 

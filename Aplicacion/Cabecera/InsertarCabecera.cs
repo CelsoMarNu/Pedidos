@@ -6,15 +6,22 @@ using Persistencia;
 using Dominio;
 
 namespace Aplicacion
-{
+{ 
     public class InsertarCabecera
     {
         public class Ejecuta : IRequest
         {
-            public int CodPedido { get; set; }
+
+            [System.ComponentModel.DataAnnotations.Required]
             public int Codcliente { get; set; }
+            
+            [System.ComponentModel.DataAnnotations.Required]
             public string Nombre { get; set; }
+
+            [System.ComponentModel.DataAnnotations.Required]
             public DateTime FechaPedido { get; set; }
+
+            [System.ComponentModel.DataAnnotations.Required]
             public DateTime FechaEntrega { get; set; }
             public string Vendedor { get; set; }
             public string Moneda { get; set; }
@@ -30,7 +37,6 @@ namespace Aplicacion
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var Cabecera = new Cabecera {
-                    CodPedido = request.CodPedido,
                     Codcliente = request.Codcliente,
                     Nombre = request.Nombre,
                     FechaPedido = request.FechaPedido,
