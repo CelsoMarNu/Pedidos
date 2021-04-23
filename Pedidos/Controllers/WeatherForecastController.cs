@@ -12,9 +12,11 @@ namespace Pedidos.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-       private readonly Conexion Context;
-       public WeatherForecastController(Conexion _Context){
-            this.Context = _Context;
-       }     
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            string[] nombres = new[] { "celso Martinez" };
+            return nombres;
+        }
     }
 }

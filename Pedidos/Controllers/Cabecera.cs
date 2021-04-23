@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pedidos.Controllers
 {
-    [Route ("api/[controller]")]
     [ApiController]
+    [Route ("api/[controller]")]
+
     public class CabeceraController : ControllerBase
     {
         private readonly IMediator _mediator;

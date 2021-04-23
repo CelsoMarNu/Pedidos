@@ -18,8 +18,7 @@ namespace Aplicacion
             public DateTime FechaEntrega { get; set; }
             public string Vendedor { get; set; }
             public string Moneda { get; set; }
-            public float Total { get; set; }
-
+            public float Total { get; set; }           
         }
 
         public class EjecutarValidacion : AbstractValidator<Ejecuta>
